@@ -41,4 +41,16 @@ public class Sample41Controller {
   public String sample43() {
     return "sample43.html";
   }
+
+  @PostMapping("step3")
+  @Transactional
+  public String sample43(@RequestParam String chamberName, ModelMap model, Principal prin) {
+    String loginUser = prin.getName();
+    Chamber chamber3 = new Chamber();
+    chamber3.setChamberName(chamberName);
+    chamber3.setUserName(loginUser);
+    chamberMapper.insertChamber(chamber3);
+    model.addAttribute("chamber3", chamber3);
+    return "sample43.html";
+  }
 }
