@@ -53,4 +53,9 @@ public class Sample41Controller {
     model.addAttribute("chamber3", chamber3);
     return "sample43.html";
   }
+
+  @GetMapping("step4")
+  public String sample44() {
+    return "sample45.html";
+  }
 }

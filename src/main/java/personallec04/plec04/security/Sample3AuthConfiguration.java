@@ -42,6 +42,8 @@ public class Sample3AuthConfiguration {
     http.authorizeHttpRequests()
         .mvcMatchers("/sample4/**").authenticated();
 
+    http.logout().logoutSuccessUrl("/");
+
     http.csrf().disable();
     http.headers().frameOptions().disable();
     return http.build();
